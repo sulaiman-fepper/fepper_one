@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Fepper {
+  id       Int   @id @db.UnsignedInt  @default(autoincrement())
+  name     String @db.VarChar(191)
+  email     String ? @db.VarChar(191)
+  password  String @db.VarChar(191)
+  remember_token String ? @db.VarChar(100)
+  createdAt DateTime ? @default(now())
+  updatedAt DateTime ?  @updatedAt
+  auth_token String ? @db.LongText 
+  phone String  @unique @db.VarChar(191)
+  default_address_id Int ? @default(0)
+  delivery_pin String ?
+  delivery_guy_detail_id Int ?
+  avatar String ? @db.Text()
+  is_active Int @default(1) @db.TinyInt()
+  tax_number String ?
+  user_ip String ?
+}
