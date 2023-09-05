@@ -54,7 +54,7 @@ exports.getPost = async(req, res, next) => {
 //updating post on fepper
 
 exports.updatePost = async(req, res, next) => {
-    const {id} = req.params;
+    const {id} = req.body;
     const {name,
         email,
         password,
@@ -110,7 +110,7 @@ exports.updatePost = async(req, res, next) => {
 
 //delete a post from fepper
 exports.deletePost = async(req, res, next) => {
-    const {id} = req.params;
+    const {id} = req.body;
     const {name,
         email,
         password,

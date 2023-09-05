@@ -6,9 +6,9 @@ const { createPost, updatePost, deletePost, getPost } = require('../controller/c
 
 router.route('/fepper/create').post(createPost)
 
-router.route('/fepper/update/:id').post(updatePost)
+router.route('/fepper/update').post(updatePost)
 
-router.route('/fepper/delete/:id').post(deletePost)
+router.route('/fepper/delete').post(deletePost)
 
 router.route('/fepper/get').get(getPost)
 
